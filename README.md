@@ -4,32 +4,125 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Issues](https://img.shields.io/badge/issues-0-green)](https://github.com/)
 
-**A production-like, full-stack sample** showing frontend (Next.js + TypeScript + Tailwind + charts), backend (FastAPI), ML pipeline, Postgres + Redis infra, Kubernetes manifests, CI, tests, and a short recruiter video script.
+A full-stack engineering analytics platform that analyzes Pull Requests (PRs) using Machine Learning, provides visual dashboards, and integrates with modern developer workflows.
+
+### It helps engineering teams:
+
+- Detect risky PRs before merge.
+
+- Visualize trends in review cycles, risk levels, and team activity.
+
+- Run in a fully containerized environment (Docker / Kubernetes).
 
 ---
 
-## What's new in this final version (completed tasks)
-1. Frontend: polished dashboard, PR risk chart (Recharts), timeline, loading states, and better layout. See `/frontend/pages/dashboard.tsx` and `/frontend/components/PRChart.tsx`.
-2. Backend: supports PostgreSQL (via `DATABASE_URL`) and Redis caching for PR analysis results. More unit tests added in `backend/tests/`.
-3. Infra: `docker-compose.yml` now includes `db` (Postgres) and `redis`. Kubernetes manifests are in `/k8s` for deployment-ready resources.
-4. CI: `.github/workflows/ci.yml` runs backend tests against a PostgreSQL service and reports coverage placeholder.
-5. Docs: Updated README with architecture, run instructions, and a 2-minute video script at `/docs/video_script.md`.
+## Features:
+
+- Interactive Dashboard with charts (React + Recharts + Tailwind).
+- ML-Powered PR Risk Analyzer (FastAPI + scikit-learn).
+
+- PostgreSQL + Redis caching for scalable performance.
+
+- Docker Compose & Kubernetes support for easy deployment.
+
+- Pytest-based testing + GitHub Actions CI/CD.
+- Clean modular project structure with multiple services.
+  
+---
+
+## Project Structure:
+
+- https://github.com/AmSh4/MergeSense/new/main
 
 ---
 
-## Quick start (local, recommended)
-1. Build and run with Docker Compose (recommended):
-```bash
-docker-compose up --build
-```
-2. Frontend: http://localhost:3000 — Backend: http://localhost:8000 (/docs available)
-3. Train model (optional, creates `backend/models/pr_risk.joblib`):
-```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r backend/requirements.txt
-python backend/ml/train_model.py
-```
+## Tech Stack1:
 
+- Frontend: Next.js, TypeScript, Tailwind CSS, Recharts
+
+- Backend: FastAPI, SQLModel, scikit-learn
+
+- Database: PostgreSQL
+
+- Cache: Redis
+
+- Infra: Docker, Kubernetes, GitHub Actions
+
+- Testing: Pytest, React Testing Library
+
+---
+## Getting Started:
+1. Clone the repo
+     
+        git clone https://github.com/AmSh4/MergeSense.git
+        cd codeflow-insights
+
+2. Run with Docker Compose
+
+- Make sure Docker & Docker Compose are installed.
+
+        docker-compose up --build
+
+
+`Frontend → http://localhost:3000`
+
+`Backend API → http://localhost:8000/docs`
+
+3. Local Development (without Docker)
+- Backend
+  
+        cd backend
+        python3 -m venv .venv
+        source .venv/bin/activate
+        pip install -r requirements.txt
+
+**Run ML training**
+
+      python ml/train_model.py
+
+**Start FastAPI**
+
+      uvicorn main:app --reload
+
+- Frontend
+  
+      cd frontend
+      npm install
+      npm run dev
+
+
+`App → http://localhost:3000`
+
+---
+## Testing
+
+**Run unit tests:**
+
+    cd backend
+    pytest -v
+
+---
+## Deployment
+**Kubernetes**
+
+    kubectl apply -f k8s/
+
+**GitHub Actions CI/CD**
+
+- Runs linting & pytest on PRs.
+
+- Can be extended to build and push Docker images.
+---
+## Roadmap
+
+- GitHub OAuth to pull real PR data.
+
+- Fine-tune ML model with real PR datasets.
+- Mobile-friendly dashboard.
+
+- Multi-tenant support for larger teams.
+
+---
 ## Kubernetes (optional)
 Manifests are provided in `/k8s`. These are basic Deployment + Service manifests for frontend, backend, Postgres, and Redis, intended as a starting point for cluster deployment.
 
@@ -40,5 +133,11 @@ Manifests are provided in `/k8s`. These are basic Deployment + Service manifests
 - `docker-compose.yml` — local dev using Postgres + Redis
 - `docs/video_script.md` — recruiter-facing 2-minute pitch script
 
+## Contributing
 
+Contributions are welcome! 
+https://github.com/AmSh4/MergeSense/blob/main/CONTRIBUTING.md
 
+## License
+
+MIT License
