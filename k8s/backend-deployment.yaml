@@ -2,35 +2,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: codeflow-backend
+  name: MergeSense-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: codeflow-backend
+      app: MergeSense-backend
   template:
     metadata:
       labels:
-        app: codeflow-backend
+        app: MergeSense-backend
     spec:
       containers:
         - name: backend
-          image: yourrepo/codeflow-backend:latest
+          image: yourrepo/MergeSense-backend:latest
           ports:
             - containerPort: 8000
           env:
             - name: DATABASE_URL
-              value: "postgresql://postgres:postgres@codeflow-postgres:5432/codeflow"
+              value: "postgresql://postgres:postgres@codeflow-postgres:5432/MergeSense"
             - name: REDIS_URL
-              value: "redis://codeflow-redis:6379/0"
+              value: "redis://MergeSense-redis:6379/0"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: codeflow-backend
+  name: MergeSense-backend
 spec:
   selector:
-    app: codeflow-backend
+    app: MergeSense-backend
   ports:
     - protocol: TCP
       port: 8000
