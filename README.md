@@ -1,4 +1,4 @@
-# CodeFlow Insights — Final (Recruiter-ready)
+# MergeSense
 
 [![CI](https://img.shields.io/badge/ci-passing-brightgreen)](https://github.com/)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
@@ -40,8 +40,5 @@ Manifests are provided in `/k8s`. These are basic Deployment + Service manifests
 - `docker-compose.yml` — local dev using Postgres + Redis
 - `docs/video_script.md` — recruiter-facing 2-minute pitch script
 
----
-If you want, I can now:
-- Push this repo structure directly to a GitHub repo (I will provide files only — you must create the repo and upload), or
-- Produce a short README badge image or screenshots (I can provide code that generates SVG badges).
+
 
