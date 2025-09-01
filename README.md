@@ -123,7 +123,7 @@ A full-stack engineering analytics platform that analyzes Pull Requests (PRs) us
 - Multi-tenant support for larger teams.
 
 ---
-## Kubernetes (optional)
+## Kubernetes 
 Manifests are provided in `/k8s`. These are basic Deployment + Service manifests for frontend, backend, Postgres, and Redis, intended as a starting point for cluster deployment.
 
 ## Files of interest
@@ -131,7 +131,6 @@ Manifests are provided in `/k8s`. These are basic Deployment + Service manifests
 - `backend/` — FastAPI app with Postgres + Redis support and enhanced tests
 - `k8s/` — Kubernetes manifests (deployments + services)
 - `docker-compose.yml` — local dev using Postgres + Redis
-- `docs/video_script.md` — recruiter-facing 2-minute pitch script
 
 ## Contributing
 
