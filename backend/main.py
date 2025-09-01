@@ -44,7 +44,7 @@ class PRIn(BaseModel):
     comments: int
     tests_modified: bool
 
-app = FastAPI(title='CodeFlow Insights')
+app = FastAPI(title='MergeSense API')
 
 app.add_middleware(
     CORSMiddleware,
