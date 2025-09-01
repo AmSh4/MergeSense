@@ -2,15 +2,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: codeflow-redis
+  name: MergeSense-redis
 spec:
   selector:
     matchLabels:
-      app: codeflow-redis
+      app: MergeSense-redis
   template:
     metadata:
       labels:
-        app: codeflow-redis
+        app: MergeSense-redis
     spec:
       containers:
         - name: redis
@@ -21,10 +21,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: codeflow-redis
+  name: MergeSense-redis
 spec:
   selector:
-    app: codeflow-redis
+    app: MergeSense-redis
   ports:
     - protocol: TCP
       port: 6379
