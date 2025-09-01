@@ -32,7 +32,7 @@ A full-stack engineering analytics platform that analyzes Pull Requests (PRs) us
 
 ## Project Structure:
 
-- https://github.com/AmSh4/MergeSense/new/main
+- https://github.com/AmSh4/MergeSense/blob/main/Structure.md
 
 ---
 
