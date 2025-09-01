@@ -12,7 +12,6 @@
     ├── backend/               
     │   ├── models/               # SQLModel schemas
     │   │   └── _init_.py
-    │   ├── services/             # Business logic
     │   ├── ml/                   # Training & saved ML model
     │   │   └── train_model.py
     │   ├── tests/                # Pytest unit tests
